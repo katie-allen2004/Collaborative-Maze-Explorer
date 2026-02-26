@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw1wcbrn424rq"]
+
+[ext_resource type="PackedScene" uid="uid://b7gfbr10pgii7" path="res://player.tscn" id="1_xlcu7"]
+[ext_resource type="Texture2D" uid="uid://dpqy0webeslba" path="res://assets/Maps/15_by_15_orthogonal_maze.png" id="2_mjvhs"]
+[ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="3_0wlg2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7hwah"]
+texture = ExtResource("3_0wlg2")
+0:0/size_in_atlas = Vector2i(3, 3)
+0:0/0 = 0
+3:0/size_in_atlas = Vector2i(3, 3)
+3:0/0 = 0
+0:5/size_in_atlas = Vector2i(3, 3)
+0:5/0 = 0
+3:5/size_in_atlas = Vector2i(3, 3)
+3:5/0 = 0
+0:3/size_in_atlas = Vector2i(2, 2)
+0:3/0 = 0
+2:3/size_in_atlas = Vector2i(2, 2)
+2:3/0 = 0
+4:3/size_in_atlas = Vector2i(2, 2)
+4:3/0 = 0
+6:0/size_in_atlas = Vector2i(3, 3)
+6:0/0 = 0
+9:0/size_in_atlas = Vector2i(3, 3)
+9:0/0 = 0
+6:5/size_in_atlas = Vector2i(3, 3)
+6:5/0 = 0
+9:5/size_in_atlas = Vector2i(3, 3)
+9:5/0 = 0
+6:3/size_in_atlas = Vector2i(2, 2)
+6:3/0 = 0
+8:3/size_in_atlas = Vector2i(2, 2)
+8:3/0 = 0
+10:3/size_in_atlas = Vector2i(2, 2)
+10:3/0 = 0
+14:0/size_in_atlas = Vector2i(4, 4)
+14:0/0 = 0
+18:0/size_in_atlas = Vector2i(4, 4)
+18:0/0 = 0
+22:0/size_in_atlas = Vector2i(4, 4)
+22:0/0 = 0
+26:0/size_in_atlas = Vector2i(4, 4)
+26:0/0 = 0
+14:4/size_in_atlas = Vector2i(4, 4)
+14:4/0 = 0
+18:4/size_in_atlas = Vector2i(4, 4)
+18:4/0 = 0
+22:4/size_in_atlas = Vector2i(4, 4)
+22:4/0 = 0
+26:4/size_in_atlas = Vector2i(4, 4)
+26:4/0 = 0
+0:8/size_in_atlas = Vector2i(4, 4)
+0:8/0 = 0
+4:8/size_in_atlas = Vector2i(4, 4)
+4:8/0 = 0
+0:12/size_in_atlas = Vector2i(4, 4)
+0:12/0 = 0
+4:12/size_in_atlas = Vector2i(4, 4)
+4:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bnrmh"]
+sources/0 = SubResource("TileSetAtlasSource_7hwah")
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xlcu7")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, -17)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, -15)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="15By15OrthogonalMaze" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-7, -269)
+scale = Vector2(2, 2)
+texture = ExtResource("2_mjvhs")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bnrmh")
+format = 2
+layer_0/z_index = -1
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_set = SubResource("TileSet_bnrmh")
