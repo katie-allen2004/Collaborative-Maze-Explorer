@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2kj2lbm4xr47"
+path="res://.godot/imported/Glitter - Soft 8 Bit Music No Copyright Free Download.mp3-18d5b6294b044fe5b8bce4322b16e946.mp3str"
+
+[deps]
+
+source_file="res://audio/Glitter - Soft 8 Bit Music No Copyright Free Download.mp3"
+dest_files=["res://.godot/imported/Glitter - Soft 8 Bit Music No Copyright Free Download.mp3-18d5b6294b044fe5b8bce4322b16e946.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

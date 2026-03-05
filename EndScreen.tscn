@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=3 uid="uid://nu254i1hi2qb"]
+
+[ext_resource type="Script" uid="uid://cbcj652bynx6f" path="res://end_screen.gd" id="1_3w1jx"]
+[ext_resource type="Texture2D" uid="uid://bwory1mq2uwph" path="res://assets/temp-start-screen-bg.jpg" id="1_jwbto"]
+[ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="2_ia0g5"]
+[ext_resource type="FontFile" uid="uid://jira6kbjcahw" path="res://assets/Qaaxee.ttf" id="2_vpdu5"]
+[ext_resource type="AudioStream" uid="uid://b2kj2lbm4xr47" path="res://audio/Glitter - Soft 8 Bit Music No Copyright Free Download.mp3" id="5_e6a7n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0g5"]
+texture = ExtResource("1_jwbto")
+modulate_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia0g5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vpdu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ndybt"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+corner_detail = 16
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+shadow_color = Color(0, 0, 0, 0.94509804)
+shadow_size = 1
+shadow_offset = Vector2(0, 3.41)
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3w1jx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ia0g5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -352.0
+offset_right = 154.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32064736, 0.42509598, 0.39246023, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.9706598, 0.9820772, 0.9781336, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ia0g5")
+text = "Restart"
+flat = true
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vpdu5")
+text = "Menu"
+flat = true
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndybt")
+text = "Exit"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.5
+offset_top = -196.0
+offset_right = 326.5
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.5411765)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 11
+theme_override_fonts/font = ExtResource("2_ia0g5")
+theme_override_font_sizes/font_size = 150
+text = "Congradulation!
+You escaped!"
+horizontal_alignment = 1
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_e6a7n")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
