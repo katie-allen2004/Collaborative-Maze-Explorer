@@ -224,7 +224,6 @@ texture = ExtResource("2_16ofn")
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=982321757]
 position = Vector2(0, -15)
 zoom = Vector2(1.88, 1.88)
-position_smoothing_enabled = true
 
 [node name="BlackWithSmallerFeatheredCircle" type="Sprite2D" parent="Player/Camera2D" unique_id=1797617462]
 visible = false
