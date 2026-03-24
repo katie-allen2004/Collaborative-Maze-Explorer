@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cw1wcbrn424rq"]
 
+[ext_resource type="Script" uid="uid://bmxl4velcuk6p" path="res://where_light_dies.gd" id="1_1mcjh"]
 [ext_resource type="PackedScene" uid="uid://b7gfbr10pgii7" path="res://player.tscn" id="1_7yaf7"]
 [ext_resource type="Texture2D" uid="uid://bw4okf1b2vdb3" path="res://assets/pointlight_radial_texture.png" id="2_16ofn"]
 [ext_resource type="Texture2D" uid="uid://jl4t85ivmwvk" path="res://assets/black_with_smaller_feathered_circle.png" id="3_1mcjh"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="5_84ifb"]
 [ext_resource type="Texture2D" uid="uid://bpgfbr2dy8oil" path="res://assets/Maps/Floor.png" id="6_2gyus"]
 [ext_resource type="Texture2D" uid="uid://d2c6m3uwg4an0" path="res://assets/Maps/Walls.png" id="7_q5rox"]
+[ext_resource type="PackedScene" uid="uid://d1c1gu5etfklo" path="res://PauseMenu.tscn" id="9_cyd16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7hwah"]
 texture = ExtResource("5_84ifb")
@@ -193,6 +195,7 @@ sources/1 = SubResource("TileSetAtlasSource_bnrmh")
 sources/2 = SubResource("TileSetAtlasSource_ttipr")
 
 [node name="Game" type="Node2D" unique_id=741124848]
+script = ExtResource("1_1mcjh")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1015747894]
 position = Vector2(-12, 126)
@@ -254,3 +257,5 @@ layer_1/tile_data = PackedInt32Array(65528, 1, 0, -1179680, 1, 0, -1114144, 1, 0
 [node name="Layer1" type="TileMapLayer" parent="TileMap" unique_id=1523783227]
 use_parent_material = true
 tile_set = SubResource("TileSet_bnrmh")
+
+[node name="PauseMenu" parent="." unique_id=1683546984 instance=ExtResource("9_cyd16")]
