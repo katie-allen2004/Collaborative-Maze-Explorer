@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cik6g6sotv02m"]
+[gd_scene format=3 uid="uid://cik6g6sotv02m"]
 
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="1_ba8gm"]
-[ext_resource type="Script" uid="uid://bgl1goll8ewlx" path="res://door.gd" id="1_v6xrn"]
+[ext_resource type="Script" uid="uid://bgl1goll8ewlx" path="res://scripts/door.gd" id="1_v6xrn"]
 [ext_resource type="AudioStream" uid="uid://ck7da6qord6ti" path="res://audio/8-bit error game sound effects - wrong invalid denied unauthorized sounds.wav" id="3_0phs7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6xrn"]
