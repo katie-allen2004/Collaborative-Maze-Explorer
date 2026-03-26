@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://korn2q2c6t1p"]
+[gd_scene format=3 uid="uid://korn2q2c6t1p"]
 
-[ext_resource type="Script" uid="uid://dg04vcj8i88r5" path="res://key.gd" id="1_yefcj"]
+[ext_resource type="Script" uid="uid://dg04vcj8i88r5" path="res://scripts/key.gd" id="1_yefcj"]
 [ext_resource type="Texture2D" uid="uid://br1ibvpdhwpst" path="res://assets/Sprite-0001.png" id="2_tqaaw"]
 [ext_resource type="AudioStream" uid="uid://1lfod2x5nemg" path="res://audio/8-Bit Coin Sound Effect (Copyright Free).wav" id="3_tqaaw"]
 
