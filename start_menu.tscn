@@ -2,13 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bwory1mq2uwph" path="res://assets/temp-start-screen-bg.jpg" id="1_jwbto"]
 [ext_resource type="Script" uid="uid://bgbxcp4peephy" path="res://start_menu.gd" id="1_v2mkm"]
-[ext_resource type="AudioStream" uid="uid://dy8tdi0n5xqad" path="res://audio/Original 8-Bit Music_ Spooky Theme.mp3" id="2_ctwoq"]
 [ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="2_ia0g5"]
 [ext_resource type="FontFile" uid="uid://jira6kbjcahw" path="res://assets/Qaaxee.ttf" id="2_vpdu5"]
+[ext_resource type="Shader" uid="uid://bntntrcpunauo" path="res://start_menu.gdshader" id="5_ctwoq"]
+[ext_resource type="Texture2D" uid="uid://ji5l4yu4o235" path="res://noise_tex.png" id="6_ppfnh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0g5"]
 texture = ExtResource("1_jwbto")
 modulate_color = Color(0.40392157, 0.40392157, 0.40392157, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctwoq"]
+shader = ExtResource("5_ctwoq")
+shader_parameter/noise_tex = ExtResource("6_ppfnh")
+shader_parameter/opacity = 0.22
+shader_parameter/pixel_size = 6.0
+shader_parameter/noise_scale = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ia0g5"]
 
@@ -31,7 +39,7 @@ shadow_color = Color(0, 0, 0, 0.94509804)
 shadow_size = 1
 shadow_offset = Vector2(0, 3.41)
 
-[node name="StartMenu" type="Control" unique_id=304694012]
+[node name="MainMenu" type="Control" unique_id=304694012]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,13 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v2mkm")
 
-[node name="click" type="AudioStreamPlayer" parent="." unique_id=1490807961]
-
-[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=2079630390]
-stream = ExtResource("2_ctwoq")
-autoplay = true
-
-[node name="Panel" type="Panel" parent="." unique_id=1400252301]
+[node name="BG-Panel" type="Panel" parent="." unique_id=1400252301]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,66 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ia0g5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=693685247]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -154.0
-offset_top = -352.0
-offset_right = 154.0
-offset_bottom = -105.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/separation = 50
-
-[node name="Start Game" type="Button" parent="VBoxContainer" unique_id=795669481]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
-theme_override_colors/font_pressed_color = Color(0.32064736, 0.42509598, 0.39246023, 0.89411765)
-theme_override_colors/font_hover_color = Color(0.9706598, 0.9820772, 0.9781336, 1)
-theme_override_fonts/font = ExtResource("2_vpdu5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ia0g5")
-text = "Start game"
-flat = true
-
-[node name="HowToPlay" type="Button" parent="VBoxContainer" unique_id=188835778]
-custom_minimum_size = Vector2(200, 40)
-layout_mode = 2
-theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
-theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
-theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
-theme_override_fonts/font = ExtResource("2_vpdu5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ctwoq")
-text = "How to Play"
-
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=1291739087]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
-theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
-theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
-theme_override_fonts/font = ExtResource("2_vpdu5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_vpdu5")
-text = "Options"
-flat = true
-
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1582585032]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
-theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
-theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
-theme_override_fonts/font = ExtResource("2_vpdu5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_ndybt")
-text = "Exit"
-flat = true
-
-[node name="Label" type="Label" parent="." unique_id=1514187533]
+[node name="Title-Label" type="Label" parent="." unique_id=1514187533]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -135,7 +78,157 @@ theme_override_font_sizes/font_size = 150
 text = "Where Light Dies"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[node name="GlitchTex-ColorRect" type="ColorRect" parent="." unique_id=1421959115]
+material = SubResource("ShaderMaterial_ctwoq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StartMenu" type="Control" parent="." unique_id=976452338]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="click" type="AudioStreamPlayer" parent="StartMenu" unique_id=1490807961]
+
+[node name="BGM" type="AudioStreamPlayer" parent="StartMenu" unique_id=2079630390]
+autoplay = true
+
+[node name="StartMenuOptions-VBox" type="VBoxContainer" parent="StartMenu" unique_id=693685247]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 402.0
+offset_top = 247.0
+offset_right = 710.0
+offset_bottom = 530.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Start Game" type="Button" parent="StartMenu/StartMenuOptions-VBox" unique_id=795669481]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32064736, 0.42509598, 0.39246023, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.9706598, 0.9820772, 0.9781336, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ia0g5")
+text = "Start game"
+flat = true
+
+[node name="HowToPlay" type="Button" parent="StartMenu/StartMenuOptions-VBox" unique_id=188835778]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ctwoq")
+text = "How to Play"
+flat = true
+
+[node name="Options" type="Button" parent="StartMenu/StartMenuOptions-VBox" unique_id=1291739087]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vpdu5")
+text = "Options"
+flat = true
+
+[node name="Exit" type="Button" parent="StartMenu/StartMenuOptions-VBox" unique_id=1582585032]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndybt")
+text = "Exit"
+flat = true
+
+[node name="DifficultyMenu" type="Control" parent="." unique_id=1564908140]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DifficultyOptions-VBox" type="VBoxContainer" parent="DifficultyMenu" unique_id=1001526426]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 402.0
+offset_top = 247.0
+offset_right = 710.0
+offset_bottom = 530.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Easy" type="Button" parent="DifficultyMenu/DifficultyOptions-VBox" unique_id=829829466]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32064736, 0.42509598, 0.39246023, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.9706598, 0.9820772, 0.9781336, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ia0g5")
+action_mode = 0
+text = "Easy"
+flat = true
+
+[node name="Medium" type="Button" parent="DifficultyMenu/DifficultyOptions-VBox" unique_id=394536886]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ctwoq")
+text = "Medium"
+flat = true
+
+[node name="Hard" type="Button" parent="DifficultyMenu/DifficultyOptions-VBox" unique_id=1552094422]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vpdu5")
+text = "Hard"
+flat = true
+
+[node name="Back" type="Button" parent="DifficultyMenu/DifficultyOptions-VBox" unique_id=1896718882]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32156864, 0.42352942, 0.39215687, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.972549, 0.98039216, 0.9764706, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ndybt")
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Back" to="." method="_on_back_pressed"]
