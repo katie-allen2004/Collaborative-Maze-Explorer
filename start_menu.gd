@@ -5,7 +5,7 @@ extends Control
 
 func _on_start_game_pressed() -> void:
 	$click.play()
-	get_tree().change_scene_to_file("res://EndlessFog.tscn")
+	get_tree().change_scene_to_file("res://WhereLightDies.tscn")
 
 func _on_options_pressed() -> void:
 	$click.play()
