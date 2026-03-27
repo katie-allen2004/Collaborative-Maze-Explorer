@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy8tdi0n5xqad"
+path="res://.godot/imported/Original 8-Bit Music_ Spooky Theme.mp3-6183df8123a10b0d823d8a23c849a441.mp3str"
+
+[deps]
+
+source_file="res://audio/Original 8-Bit Music_ Spooky Theme.mp3"
+dest_files=["res://.godot/imported/Original 8-Bit Music_ Spooky Theme.mp3-6183df8123a10b0d823d8a23c849a441.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

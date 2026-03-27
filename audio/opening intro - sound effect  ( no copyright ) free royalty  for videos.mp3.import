@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brnexor6j12of"
+path="res://.godot/imported/opening intro - sound effect  ( no copyright ) free royalty  for videos.mp3-ab75adaf1f1884fb38a81f2d99d02923.mp3str"
+
+[deps]
+
+source_file="res://audio/opening intro - sound effect  ( no copyright ) free royalty  for videos.mp3"
+dest_files=["res://.godot/imported/opening intro - sound effect  ( no copyright ) free royalty  for videos.mp3-ab75adaf1f1884fb38a81f2d99d02923.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
