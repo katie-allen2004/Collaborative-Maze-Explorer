@@ -14,10 +14,14 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="EndlessFog"
+config/name="WhereLightDies"
 run/main_scene="uid://sphablitp0f"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="EndlessFog"
 
 [input]
 

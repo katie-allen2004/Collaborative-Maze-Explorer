@@ -26,18 +26,21 @@ func play_anim(anim_name: StringName) -> void:
 func update_animation(direction: Vector2) -> void:
 	if direction == Vector2.ZERO:
 		match last_facing:
-			"side": play_anim(&"idle_side")
+			"left": play_anim(&"idle_side_left")
+			"right": play_anim(&"idle_side_right")
 			"up": play_anim(&"idle_up")
 			"down": play_anim(&"idle_down")
 		return
 
 	# Determine dominant direction
 	if abs(direction.x) > abs(direction.y):
-		last_facing = "side"
-		animated_sprite_2d.flip_h = direction.x < 0
-		play_anim(&"walk_side")
+		if (direction.x < 0):
+			last_facing = "left"
+			play_anim(&"walk_side_left")
+		else:
+			last_facing = "right"
+			play_anim(&"walk_side_right")
 	else:
-		animated_sprite_2d.flip_h = false
 		if direction.y < 0:
 			last_facing = "up"
 			play_anim(&"walk_up")
