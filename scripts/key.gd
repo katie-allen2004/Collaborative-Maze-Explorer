@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var pickup_sound: AudioStreamPlayer2D = $pickup_sound
+signal key_collected
 # Called when the node enters the scene tree for the first time.
 
 
@@ -11,6 +12,6 @@ func _on_body_entered(body) -> void:
 		pickup_sound.play()
 		body.has_key = true
 		animation_player.play("key_pickup")
-		
+		emit_signal("key_collected")
 
 		

@@ -19,6 +19,10 @@ run/main_scene="uid://sphablitp0f"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalStats="*uid://vpwyay72yc4o"
+
 [dotnet]
 
 project/assembly_name="EndlessFog"

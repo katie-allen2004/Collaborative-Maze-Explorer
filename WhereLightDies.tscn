@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://cw1wcbrn424rq"]
 
-[ext_resource type="Script" uid="uid://bmxl4velcuk6p" path="res://where_light_dies.gd" id="1_16ofn"]
+[ext_resource type="Script" uid="uid://bmxl4velcuk6p" path="res://scripts/where_light_dies.gd" id="1_16ofn"]
 [ext_resource type="PackedScene" uid="uid://b7gfbr10pgii7" path="res://player.tscn" id="1_xlcu7"]
 [ext_resource type="Texture2D" uid="uid://bw4okf1b2vdb3" path="res://assets/pointlight_radial_texture.png" id="2_4uon0"]
 [ext_resource type="Texture2D" uid="uid://dpqy0webeslba" path="res://assets/Maps/15_by_15_orthogonal_maze.png" id="2_mjvhs"]
+[ext_resource type="Texture2D" uid="uid://b577ygp3y15ky" path="res://assets/longer_gradient_stronger.png" id="3_16ofn"]
 [ext_resource type="PackedScene" uid="uid://d1c1gu5etfklo" path="res://PauseMenu.tscn" id="8_1mcjh"]
 [ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="11_ow0gc"]
 [ext_resource type="AudioStream" uid="uid://cmpjvyalj55nn" path="res://audio/Other-wordly Buddy  pseudomorph0z.mp3" id="11_rp6vu"]
-[ext_resource type="PackedScene" uid="uid://doj5s1akcn4ys" path="res://levels/Level1Maze1.tscn" id="12_rp6vu"]
 
 [node name="Game" type="Node2D" unique_id=1088762234]
 script = ExtResource("1_16ofn")
@@ -21,12 +21,13 @@ z_index = 1
 position = Vector2(24, -87)
 
 [node name="WallLight" type="PointLight2D" parent="Player" unique_id=1187416000]
-position = Vector2(0, -8)
+position = Vector2(-0.785, -7.625)
+scale = Vector2(1.1015625, 1.1015625)
 energy = 0.53
 shadow_enabled = true
 shadow_filter = 1
 shadow_item_cull_mask = 2
-texture = ExtResource("2_4uon0")
+texture = ExtResource("3_16ofn")
 texture_scale = 0.5
 
 [node name="PlayerLight" type="PointLight2D" parent="Player" unique_id=1113695965]
@@ -68,7 +69,7 @@ texture = ExtResource("2_mjvhs")
 stream = ExtResource("11_rp6vu")
 autoplay = true
 
-[node name="Node2D" parent="." unique_id=2091730405 instance=ExtResource("12_rp6vu")]
-position = Vector2(3, -8)
-
 [node name="PauseMenu" parent="." unique_id=1683546984 instance=ExtResource("8_1mcjh")]
+
+[node name="CurrentLevel" type="Marker2D" parent="." unique_id=1154530690]
+position = Vector2(24, -96)

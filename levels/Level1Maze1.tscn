@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://doj5s1akcn4ys"]
 
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="1_qeek2"]
-[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/level_1_maze_1.gd" id="1_vyyah"]
+[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/spawn_keys.gd" id="1_vyyah"]
 [ext_resource type="Texture2D" uid="uid://bpgfbr2dy8oil" path="res://assets/Maps/Floor.png" id="2_saxvf"]
 [ext_resource type="Texture2D" uid="uid://d2c6m3uwg4an0" path="res://assets/Maps/Walls.png" id="3_vyyah"]
 [ext_resource type="PackedScene" uid="uid://cik6g6sotv02m" path="res://door.tscn" id="5_p4oia"]
@@ -201,7 +201,7 @@ key_scene = ExtResource("5_qoou3")
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=1200408602]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(-12, 126)
+position = Vector2(-31, 211)
 tile_set = SubResource("TileSet_jprn6")
 
 [node name="Upperground" type="TileMapLayer" parent="TileMap" unique_id=1141537287]
@@ -222,11 +222,11 @@ tile_map_data = PackedByteArray("AAD4/wAAAQAAAAAAAADg/+3/AQAAAAAAAADg/+7/AQAAAAA
 tile_set = SubResource("TileSet_jprn6")
 
 [node name="KeySpawnA" type="Marker2D" parent="." unique_id=2134263755]
-position = Vector2(-832, -371)
+position = Vector2(-851, -286)
 
 [node name="KeySpawnB" type="Marker2D" parent="." unique_id=1953661399]
-position = Vector2(-225, 282)
+position = Vector2(-244, 367)
 
 [node name="Door" parent="." unique_id=1252019844 instance=ExtResource("5_p4oia")]
 z_index = 1
-position = Vector2(835, 219)
+position = Vector2(816, 304)

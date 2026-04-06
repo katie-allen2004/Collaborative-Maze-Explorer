@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://sphablitp0f"]
 
 [ext_resource type="Texture2D" uid="uid://bwory1mq2uwph" path="res://assets/temp-start-screen-bg.jpg" id="1_jwbto"]
-[ext_resource type="Script" uid="uid://bgbxcp4peephy" path="res://start_menu.gd" id="1_v2mkm"]
+[ext_resource type="Script" uid="uid://bgbxcp4peephy" path="res://scripts/start_menu.gd" id="1_v2mkm"]
 [ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="2_ia0g5"]
 [ext_resource type="FontFile" uid="uid://jira6kbjcahw" path="res://assets/Qaaxee.ttf" id="2_vpdu5"]
 [ext_resource type="Shader" uid="uid://bntntrcpunauo" path="res://start_menu.gdshader" id="5_ctwoq"]
+[ext_resource type="AudioStream" uid="uid://dy8tdi0n5xqad" path="res://audio/Original 8-Bit Music_ Spooky Theme.mp3" id="6_7boi2"]
 [ext_resource type="Texture2D" uid="uid://ji5l4yu4o235" path="res://noise_tex.png" id="6_ppfnh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0g5"]
@@ -96,6 +97,7 @@ offset_bottom = 40.0
 [node name="click" type="AudioStreamPlayer" parent="StartMenu" unique_id=1490807961]
 
 [node name="BGM" type="AudioStreamPlayer" parent="StartMenu" unique_id=2079630390]
+stream = ExtResource("6_7boi2")
 autoplay = true
 
 [node name="StartMenuOptions-VBox" type="VBoxContainer" parent="StartMenu" unique_id=693685247]
