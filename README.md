@@ -1,4 +1,4 @@
-# EndlessFog – Collaborative Maze Explorer
+# Where Light Dies
 
 Team Milestone 1 – Playable Core (~40%)
 
@@ -9,7 +9,7 @@ Windows lab machines
 
 - Extract the ZIP file.
 - Open the folder.
-- Double-click `EndlessFog.exe.`
+- Double-click `WhereLightDies.exe.`
 
 - Keep all files in the same folder.
 No IDE (Godot) is required.
@@ -25,20 +25,3 @@ Movement:
 
 - W / A / S / D
 - Arrow Keys
-
-## Implemented Features (Milestone 1)
-
-- Player movement system
-- Camera follow system
-- TileMap maze layout
-- Wall collision system
-- Fog visual atmosphere effect
-- Stable playable environment
-## Known Limitations
-- No enemies implemented yet
-- No win/lose conditions
-- No health or scoring system
-- Placeholder environment visuals
-## Performance
-- Runs smoothly at stable frame rate on lab machines.
-- No crashes during demo path.
