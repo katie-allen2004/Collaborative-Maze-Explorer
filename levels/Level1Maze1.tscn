@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://doj5s1akcn4ys"]
 
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="1_qeek2"]
-[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/spawn_keys.gd" id="1_vyyah"]
+[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/spawn_assets.gd" id="1_vyyah"]
 [ext_resource type="Texture2D" uid="uid://bpgfbr2dy8oil" path="res://assets/Maps/Floor.png" id="2_saxvf"]
 [ext_resource type="Texture2D" uid="uid://d2c6m3uwg4an0" path="res://assets/Maps/Walls.png" id="3_vyyah"]
 [ext_resource type="PackedScene" uid="uid://cik6g6sotv02m" path="res://door.tscn" id="5_p4oia"]

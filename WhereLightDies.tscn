@@ -72,4 +72,5 @@ autoplay = true
 [node name="PauseMenu" parent="." unique_id=1683546984 instance=ExtResource("8_1mcjh")]
 
 [node name="CurrentLevel" type="Marker2D" parent="." unique_id=1154530690]
+z_index = -1
 position = Vector2(24, -96)

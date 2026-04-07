@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1bol7ykxnd5o"
+path="res://.godot/imported/Amnesia_ The Dark Descent OST_ Monster Chase Theme.mp3-23d7b81d827891d0b6fe38ee9debbf71.mp3str"
+
+[deps]
+
+source_file="res://audio/Amnesia_ The Dark Descent OST_ Monster Chase Theme.mp3"
+dest_files=["res://.godot/imported/Amnesia_ The Dark Descent OST_ Monster Chase Theme.mp3-23d7b81d827891d0b6fe38ee9debbf71.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://wh1mlm3hslwe"]
 
+[ext_resource type="Script" uid="uid://c0663fmqtap55" path="res://scripts/monster.gd" id="1_ga5te"]
 [ext_resource type="Texture2D" uid="uid://cfe5wu5lfypqx" path="res://assets/Blood Golem/Golem-Sheet_Idle.png" id="1_mrqeg"]
 [ext_resource type="Texture2D" uid="uid://busms6kibkiv3" path="res://assets/Blood Golem/Golem_Run-Sheet.png" id="2_ga5te"]
+[ext_resource type="AudioStream" uid="uid://1bol7ykxnd5o" path="res://audio/Amnesia_ The Dark Descent OST_ Monster Chase Theme.mp3" id="4_vr0w3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vr0w3"]
 atlas = ExtResource("1_mrqeg")
@@ -101,8 +103,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdu3u"]
+radius = 8.0
+height = 26.0
 
-[node name="Monster" type="CharacterBody2D" unique_id=1455547924]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga5te"]
+radius = 12.0
+height = 36.0
+
+[node name="Monster" type="CharacterBody2D" unique_id=1455547924 groups=["player"]]
+collision_layer = 6
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_ga5te")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1988715157]
 sprite_frames = SubResource("SpriteFrames_u4bh7")
@@ -111,4 +124,31 @@ autoplay = "Idle"
 frame_progress = 0.8055474
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1638075204]
+light_mask = 6
+visibility_layer = 6
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_wdu3u")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1936249073]
+
+[node name="Timer" type="Timer" parent="." unique_id=568736774]
+wait_time = 0.053
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1848867101]
+stream = ExtResource("4_vr0w3")
+autoplay = true
+max_distance = 173.0
+
+[node name="HurtArea" type="Area2D" parent="." unique_id=1710229901]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea" unique_id=151670729]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_ga5te")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="HurtArea" to="." method="_on_hurt_area_body_entered"]

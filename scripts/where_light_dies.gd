@@ -8,8 +8,7 @@ var map_choice = []
 func _ready():
 	randomize()
 	if GlobalStats.difficulty == "easy":
-		map_choice = ["res://levels/Level1Maze1.tscn", "res://levels/Easy1.tscn", "res://levels/Easy2.tscn","res://levels/Easy3.tscn"]
-		#map_choice = ["res://levels/Easy1.tscn"]
+		map_choice = ["res://levels/Easy1.tscn", "res://levels/Easy2.tscn","res://levels/Easy3.tscn"]
 	elif GlobalStats.difficulty == "medium":
 		map_choice = ["res://levels/Medium1.tscn", "res://levels/Medium2.tscn","res://levels/Medium3.tscn"]
 	else:
