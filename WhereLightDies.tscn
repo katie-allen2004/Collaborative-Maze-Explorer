@@ -6,8 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://dpqy0webeslba" path="res://assets/Maps/15_by_15_orthogonal_maze.png" id="2_mjvhs"]
 [ext_resource type="Texture2D" uid="uid://b577ygp3y15ky" path="res://assets/longer_gradient_stronger.png" id="3_16ofn"]
 [ext_resource type="PackedScene" uid="uid://d1c1gu5etfklo" path="res://PauseMenu.tscn" id="8_1mcjh"]
+[ext_resource type="Shader" uid="uid://cc1hnb4u2e43a" path="res://monster_cue.gdshader" id="9_1mcjh"]
 [ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="11_ow0gc"]
 [ext_resource type="AudioStream" uid="uid://cmpjvyalj55nn" path="res://audio/Other-wordly Buddy  pseudomorph0z.mp3" id="11_rp6vu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyd16"]
+shader = ExtResource("9_1mcjh")
+shader_parameter/radius = 0.1
+shader_parameter/softness = 0.5
+shader_parameter/border_color = Color(1, 0.2, 0.2, 1)
+shader_parameter/intensity = 0.0
 
 [node name="Game" type="Node2D" unique_id=1088762234]
 script = ExtResource("1_16ofn")
@@ -70,6 +78,35 @@ stream = ExtResource("11_rp6vu")
 autoplay = true
 
 [node name="PauseMenu" parent="." unique_id=1683546984 instance=ExtResource("8_1mcjh")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=568500590]
+
+[node name="BrightnessDarkOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1929807387]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BrightnessLightOverlay" type="ColorRect" parent="CanvasLayer" unique_id=1023421671]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MonsterCue" type="ColorRect" parent="CanvasLayer" unique_id=444657315]
+material = SubResource("ShaderMaterial_cyd16")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="CurrentLevel" type="Marker2D" parent="." unique_id=1154530690]
 z_index = -1

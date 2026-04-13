@@ -1,8 +1,22 @@
 extends Control
 
+@onready var canvas_modulate: CanvasModulate = $CanvasModulate
 
-# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	apply_brightness()
+	Settings.apply_volume()
 
+func apply_brightness() -> void:
+	var brightness_value = Settings.brightness_value
+
+	var darkest := 0.25
+	var brightest := 1.15
+
+	var t = brightness_value / 100.0
+	var gray = lerp(darkest, brightest, t)
+
+	canvas_modulate.color = Color(gray, gray, gray)
+	
 func _on_start_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://WhereLightDies.tscn")
 

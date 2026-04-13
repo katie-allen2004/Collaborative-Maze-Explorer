@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bwory1mq2uwph" path="res://assets/temp-start-screen-bg.jpg" id="1_jwbto"]
 [ext_resource type="Script" uid="uid://bgbxcp4peephy" path="res://scripts/start_menu.gd" id="1_v2mkm"]
 [ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="2_ia0g5"]
+[ext_resource type="AudioStream" uid="uid://o38j48ex7jkv" path="res://audio/click.wav" id="2_pgi0o"]
 [ext_resource type="FontFile" uid="uid://jira6kbjcahw" path="res://assets/Qaaxee.ttf" id="2_vpdu5"]
 [ext_resource type="Shader" uid="uid://bntntrcpunauo" path="res://start_menu.gdshader" id="5_ctwoq"]
 [ext_resource type="AudioStream" uid="uid://dy8tdi0n5xqad" path="res://audio/Original 8-Bit Music_ Spooky Theme.mp3" id="6_7boi2"]
 [ext_resource type="Texture2D" uid="uid://ji5l4yu4o235" path="res://noise_tex.png" id="6_ppfnh"]
+[ext_resource type="Texture2D" uid="uid://1oabap8gl1na" path="res://assets/Extra/unchecked_box.png" id="9_73a2t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0g5"]
 texture = ExtResource("1_jwbto")
@@ -40,6 +42,100 @@ shadow_color = Color(0, 0, 0, 0.94509804)
 shadow_size = 1
 shadow_offset = Vector2(0, 3.41)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgi0o"]
+bg_color = Color(0.08627451, 0.08627451, 0.09019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsckg"]
+bg_color = Color(0.29803923, 0.36862746, 0.38039216, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfl6h"]
+bg_color = Color(1, 1, 1, 0.16470589)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kefd2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acoh7"]
+bg_color = Color(1, 1, 1, 0.16470589)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p4e4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxkec"]
+bg_color = Color(1, 1, 1, 0.16470589)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ld0yp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8jvl"]
+bg_color = Color(1, 1, 1, 0.16470589)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8y6t8"]
+bg_color = Color(0.29803923, 0.36862746, 0.38039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tuia"]
+bg_color = Color(0.47820377, 0.56779623, 0.58274454, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73a2t"]
+bg_color = Color(0.08627451, 0.08627451, 0.09019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.29846585, 0.37039024, 0.3822216, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xsckg"]
+color = Color(0.5354209, 0.5354209, 0.5354209, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_73a2t"]
+color = Color(0.5372549, 0.5372549, 0.5372549, 1)
+thickness = 5
+
 [node name="MainMenu" type="Control" unique_id=304694012]
 layout_mode = 3
 anchors_preset = 15
@@ -48,6 +144,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v2mkm")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=687946276]
+
+[node name="click" type="AudioStreamPlayer2D" parent="." unique_id=1988950961]
+stream = ExtResource("2_pgi0o")
 
 [node name="BG-Panel" type="Panel" parent="." unique_id=1400252301]
 layout_mode = 1
@@ -226,6 +327,185 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ndybt")
 text = "Back"
 flat = true
 
+[node name="OptionsMenu" type="Control" parent="." unique_id=1914203296]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="OptionsMenu" unique_id=967225087]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 238.0
+offset_right = 625.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 27
+text = "Options"
+
+[node name="SubTitleLabel" type="Label" parent="OptionsMenu" unique_id=399516710]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 264.0
+offset_right = 397.0
+offset_bottom = 287.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 21
+text = "Controls"
+
+[node name="SubTitleLabel2" type="Label" parent="OptionsMenu" unique_id=1341610083]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 260.0
+offset_right = 856.0
+offset_bottom = 283.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 21
+text = "Accessibility"
+
+[node name="ControlsSection" type="Panel" parent="OptionsMenu" unique_id=1178981007]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 296.0
+offset_right = 488.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pgi0o")
+
+[node name="UpButton" type="Button" parent="OptionsMenu/ControlsSection" unique_id=539287441]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xsckg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gfl6h")
+
+[node name="DownButton" type="Button" parent="OptionsMenu/ControlsSection" unique_id=856087539]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 152.0
+offset_right = 224.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kefd2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_acoh7")
+
+[node name="LeftButton" type="Button" parent="OptionsMenu/ControlsSection" unique_id=1998028161]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 88.0
+offset_right = 224.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6p4e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jxkec")
+
+[node name="RightButton" type="Button" parent="OptionsMenu/ControlsSection" unique_id=1681109114]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 216.0
+offset_right = 224.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ld0yp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8jvl")
+
+[node name="ResetControlsButton" type="Button" parent="OptionsMenu/ControlsSection" unique_id=482970734]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 272.0
+offset_right = 192.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8y6t8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4tuia")
+text = "Reset controls"
+
+[node name="AccessibilitySection" type="Panel" parent="OptionsMenu" unique_id=1567375944]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 296.0
+offset_right = 920.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_73a2t")
+
+[node name="BLabel" type="Label" parent="OptionsMenu/AccessibilitySection" unique_id=337470774]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 111.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+text = "Brightness"
+
+[node name="BrightnessHSlider" type="HSlider" parent="OptionsMenu/AccessibilitySection" unique_id=1261011093]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 208.0
+offset_bottom = 92.0
+theme_override_styles/slider = SubResource("StyleBoxLine_xsckg")
+rounded = true
+
+[node name="VisualCueCheckBox" type="CheckBox" parent="OptionsMenu/AccessibilitySection" unique_id=1571850263]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 219.0
+offset_bottom = 199.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_icons/unchecked = ExtResource("9_73a2t")
+text = "  Visual proximity cue"
+
+[node name="VPDescription" type="Label" parent="OptionsMenu/AccessibilitySection" unique_id=842573184]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 24.0
+offset_top = 208.0
+offset_right = 247.39203
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5882353)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 13
+text = "A noise is played when the
+monster is in close proximity to
+the player. Selecting this option 
+will provide a visual alternative 
+to that sound cue."
+
+[node name="CenterContainer" type="CenterContainer" parent="OptionsMenu/AccessibilitySection" unique_id=1310388064]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VolumeHSlider" type="HSlider" parent="OptionsMenu/AccessibilitySection" unique_id=70625091]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 132.0
+offset_right = 208.0
+offset_bottom = 148.0
+theme_override_styles/slider = SubResource("StyleBoxLine_73a2t")
+
+[node name="VLabel" type="Label" parent="OptionsMenu/AccessibilitySection" unique_id=638528228]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 111.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("2_vpdu5")
+text = "Volume"
+
+[node name="Button" type="Button" parent="OptionsMenu" unique_id=1069333312]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 584.0
+offset_right = 184.0
+offset_bottom = 618.0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 25
+text = "< Back"
+
 [node name="HowToPlayMenu" type="Control" parent="." unique_id=235522891]
 layout_mode = 1
 anchors_preset = 15
@@ -310,6 +590,25 @@ theme_override_font_sizes/font_size = 20
 text = "Back"
 flat = true
 
+[node name="BrightnessDarkOverlay" type="ColorRect" parent="." unique_id=1161769236]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BrightnessLightOverlay" type="ColorRect" parent="." unique_id=1872945553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Options" to="." method="_on_options_pressed"]
@@ -318,5 +617,14 @@ flat = true
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlsSection/UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlsSection/DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlsSection/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlsSection/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/ControlsSection/ResetControlsButton" to="." method="_on_reset_controls_button_pressed"]
+[connection signal="value_changed" from="OptionsMenu/AccessibilitySection/BrightnessHSlider" to="." method="_on_brightness_slider_value_changed"]
+[connection signal="toggled" from="OptionsMenu/AccessibilitySection/VisualCueCheckBox" to="." method="_on_visual_cue_check_box_toggled"]
+[connection signal="value_changed" from="OptionsMenu/AccessibilitySection/VolumeHSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="OptionsMenu/Button" to="." method="_on_options_back_button_pressed"]
 [connection signal="pressed" from="HowToPlayMenu/Instructions-Panel/CloseButton" to="." method="_on_close_htp_button_pressed"]
 [connection signal="pressed" from="HowToPlayMenu/Instructions-Panel/CloseButton" to="HowToPlayMenu/Instructions-Panel/CloseButton" method="_on_pressed"]
