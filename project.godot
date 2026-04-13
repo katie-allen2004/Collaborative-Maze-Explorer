@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalStats="*uid://vpwyay72yc4o"
+Settings="*uid://c8v34vepe0coq"
 
 [dotnet]
 

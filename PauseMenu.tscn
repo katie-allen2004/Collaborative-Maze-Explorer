@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://d1c1gu5etfklo"]
 
 [ext_resource type="Script" uid="uid://bil66my3i5bvo" path="res://scripts/pause_menu.gd" id="1_nov15"]
+[ext_resource type="FontFile" uid="uid://bpo13w6vrdn4t" path="res://assets/sd_auto_pilot.ttf" id="2_q775a"]
+[ext_resource type="FontFile" uid="uid://jira6kbjcahw" path="res://assets/Qaaxee.ttf" id="3_qg8xq"]
+[ext_resource type="Texture2D" uid="uid://1oabap8gl1na" path="res://assets/Extra/unchecked_box.png" id="4_qg8xq"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_36k83"]
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r2gvh"]
+thickness = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sev4g"]
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1683546984]
 script = ExtResource("1_nov15")
 
-[node name="Panel" type="Panel" parent="." unique_id=847985407]
+[node name="PausePanel" type="Panel" parent="." unique_id=847985407]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -19,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.3302279, 2.1523063)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=595135854]
+[node name="VBoxContainer" type="VBoxContainer" parent="PausePanel" unique_id=595135854]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,23 +45,105 @@ grow_vertical = 2
 theme_override_constants/separation = 5
 alignment = 1
 
-[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer" unique_id=885088491]
+[node name="TitleLabel" type="Label" parent="PausePanel/VBoxContainer" unique_id=885088491]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_q775a")
+theme_override_font_sizes/font_size = 60
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer" unique_id=1380597964]
+[node name="ResumeButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1380597964]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=1720622421]
+[node name="OptionsButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1906569476]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
+text = "Options"
+
+[node name="RestartButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1720622421]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
 text = "Restart"
 
-[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1101264269]
+[node name="MainMenuButton" type="Button" parent="PausePanel/VBoxContainer" unique_id=1101264269]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
 text = "Main Menu"
 
-[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[node name="OptionsPanel" type="Panel" parent="." unique_id=1514214667]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel" unique_id=1901696838]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.25
+offset_top = -184.83868
+offset_right = 150.25
+offset_bottom = 184.83868
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionsPanel/VBoxContainer" unique_id=810244376]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
+theme_override_font_sizes/font_size = 60
+text = "Options
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="OptionsPanel/VBoxContainer" unique_id=484435391]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
+text = "Brightness"
+
+[node name="BrightnessHSlider" type="HSlider" parent="OptionsPanel/VBoxContainer" unique_id=1940110136]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_36k83")
+
+[node name="Label3" type="Label" parent="OptionsPanel/VBoxContainer" unique_id=1061602055]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
+text = "
+Volume"
+
+[node name="VolumeHSlider" type="HSlider" parent="OptionsPanel/VBoxContainer" unique_id=35346002]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_r2gvh")
+
+[node name="VisualCueCheckBox" type="CheckBox" parent="OptionsPanel/VBoxContainer" unique_id=352312547]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qg8xq")
+theme_override_icons/unchecked = ExtResource("4_qg8xq")
+text = "  Visual cue enabled"
+
+[node name="BackButton" type="Button" parent="OptionsPanel/VBoxContainer" unique_id=1563951256]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0.4366794, 0.49273014, 0.5186729, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_qg8xq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sev4g")
+text = "Back"
+
+[connection signal="pressed" from="PausePanel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="PausePanel/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/BrightnessHSlider" to="." method="_on_brightness_h_slider_value_changed"]
+[connection signal="value_changed" from="OptionsPanel/VBoxContainer/VolumeHSlider" to="." method="_on_volume_h_slider_value_changed"]
+[connection signal="toggled" from="OptionsPanel/VBoxContainer/VisualCueCheckBox" to="." method="_on_visual_cue_check_box_toggled"]
+[connection signal="pressed" from="OptionsPanel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
