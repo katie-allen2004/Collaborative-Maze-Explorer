@@ -1,11 +1,10 @@
 [gd_scene format=4 uid="uid://ch1y25loqlwsc"]
 
-[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/level_1_maze_1.gd" id="1_iq00m"]
+[ext_resource type="Script" uid="uid://cj3nyxe8fcwe8" path="res://scripts/spawn_assets.gd" id="1_iq00m"]
 [ext_resource type="PackedScene" uid="uid://korn2q2c6t1p" path="res://key.tscn" id="2_enn12"]
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="3_pyjic"]
 [ext_resource type="Texture2D" uid="uid://bpgfbr2dy8oil" path="res://assets/Maps/Floor.png" id="4_jreok"]
 [ext_resource type="Texture2D" uid="uid://d2c6m3uwg4an0" path="res://assets/Maps/Walls.png" id="5_t7cnt"]
-[ext_resource type="Texture2D" uid="uid://djusw36khde1v" path="res://assets/Extra/40_by_40_orthogonal_maze.png" id="6_enn12"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4oia"]
 texture = ExtResource("3_pyjic")
@@ -222,10 +221,10 @@ tile_map_data = PackedByteArray("AADD/+f/AQAAAAAAAADD/+j/AQAAAAAAAADD/+n/AQAAAAA
 tile_set = SubResource("TileSet_jprn6")
 
 [node name="KeySpawnA" type="Marker2D" parent="." unique_id=2134263755]
-position = Vector2(-832, -371)
+position = Vector2(-1133, -504)
 
 [node name="KeySpawnB" type="Marker2D" parent="." unique_id=1953661399]
-position = Vector2(-225, 282)
+position = Vector2(-200, 233)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228461085]
 visible = false
@@ -233,4 +232,3 @@ modulate = Color(1, 1, 1, 0.39607844)
 visibility_layer = 3
 position = Vector2(19, -550)
 scale = Vector2(5.7906446, 6.3755856)
-texture = ExtResource("6_enn12")

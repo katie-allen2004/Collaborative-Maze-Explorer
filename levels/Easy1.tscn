@@ -252,13 +252,13 @@ tile_map_data = PackedByteArray("AAD4/wAAAQAAAAAAAADg/+3/AQAAAAAAAADg/+7/AQAAAAA
 tile_set = SubResource("TileSet_jprn6")
 
 [node name="KeySpawnA" type="Marker2D" parent="." unique_id=1920166460]
-position = Vector2(498, -683)
+position = Vector2(576, -662)
 
 [node name="KeySpawnB" type="Marker2D" parent="." unique_id=2085749629]
-position = Vector2(94, 390)
+position = Vector2(85, 397)
 
 [node name="MonsterSpawn" type="Marker2D" parent="." unique_id=933588776]
-position = Vector2(-488, -667)
+position = Vector2(-487, -667)
 
 [node name="Door" parent="." unique_id=2046511208 instance=ExtResource("5_er5ea")]
 z_index = -1

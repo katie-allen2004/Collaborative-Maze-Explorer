@@ -23,4 +23,5 @@ func _on_key_collected():
 func _spawn_unit_safely():
 	var monster = preload("res://monster.tscn").instantiate()
 	add_child(monster)
+	monster.global_position = monster_spawn.global_position
 	

@@ -18,9 +18,9 @@ func _ready():
 	if GlobalStats.difficulty == "easy":
 		map_choice = ["res://levels/Easy1.tscn", "res://levels/Easy2.tscn","res://levels/Easy3.tscn"]
 	elif GlobalStats.difficulty == "medium":
-		map_choice = ["res://levels/Medium1.tscn", "res://levels/Medium2.tscn","res://levels/Medium3.tscn"]
+		map_choice = ["res://levels/Med1.tscn"]
 	else:
-		map_choice = ["res://levels/Hard1.tscn", "res://levels/Hard2.tscn","res://levels/Hard3.tscn"]
+		map_choice = ["res://levels/Hard1.tscn"]
 	
 	var current_map_choice = map_choice.pick_random()
 	current_map = load(current_map_choice)
