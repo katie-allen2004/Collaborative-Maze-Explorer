@@ -4,6 +4,7 @@ const SPEED = 75.0
 
 var player: Node2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	add_to_group("monster")
@@ -16,14 +17,28 @@ func _physics_process(_delta: float) -> void:
 
 	if nav_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
+		update_animation()
 		move_and_slide()
 		return
 
 	var next_path_pos := nav_agent.get_next_path_position()
 	var dir := global_position.direction_to(next_path_pos)
 	velocity = dir * SPEED
+	
+	update_animation()
 	move_and_slide()
 	
+func update_animation() -> void:
+	if velocity.length() > 0.1:
+		sprite.play("Run")
+		
+		if velocity.x > 0:
+			sprite.flip_h = true
+		elif velocity.x < 0:
+			sprite.flip_h = false
+	else:
+		sprite.play("Idle")
+
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
 

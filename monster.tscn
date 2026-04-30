@@ -1,67 +1,45 @@
 [gd_scene format=3 uid="uid://wh1mlm3hslwe"]
 
 [ext_resource type="Script" uid="uid://c0663fmqtap55" path="res://scripts/monster.gd" id="1_ga5te"]
-[ext_resource type="Texture2D" uid="uid://cfe5wu5lfypqx" path="res://assets/Blood Golem/Golem-Sheet_Idle.png" id="1_mrqeg"]
-[ext_resource type="Texture2D" uid="uid://busms6kibkiv3" path="res://assets/Blood Golem/Golem_Run-Sheet.png" id="2_ga5te"]
+[ext_resource type="Texture2D" uid="uid://bu5t5cirjxurw" path="res://assets/_monster_sprite_idle.png" id="2_vr0w3"]
+[ext_resource type="Texture2D" uid="uid://c2pjdlv8hgers" path="res://assets/_monster_sprite.png" id="3_6tndq"]
 [ext_resource type="AudioStream" uid="uid://1bol7ykxnd5o" path="res://audio/Amnesia_ The Dark Descent OST_ Monster Chase Theme.mp3" id="4_vr0w3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vr0w3"]
-atlas = ExtResource("1_mrqeg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ngjm"]
+atlas = ExtResource("2_vr0w3")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6tndq"]
-atlas = ExtResource("1_mrqeg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhkt7"]
+atlas = ExtResource("2_vr0w3")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ngjm"]
-atlas = ExtResource("1_mrqeg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3r7jw"]
+atlas = ExtResource("2_vr0w3")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uhkt7"]
-atlas = ExtResource("1_mrqeg")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rux75"]
+atlas = ExtResource("2_vr0w3")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3r7jw"]
-atlas = ExtResource("1_mrqeg")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rux75"]
-atlas = ExtResource("1_mrqeg")
-region = Rect2(160, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_481d3"]
-atlas = ExtResource("2_ga5te")
+atlas = ExtResource("3_6tndq")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyrhi"]
-atlas = ExtResource("2_ga5te")
+atlas = ExtResource("3_6tndq")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o46hk"]
-atlas = ExtResource("2_ga5te")
+atlas = ExtResource("3_6tndq")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s53e4"]
-atlas = ExtResource("2_ga5te")
+atlas = ExtResource("3_6tndq")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tpp6e"]
-atlas = ExtResource("2_ga5te")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ocebi"]
-atlas = ExtResource("2_ga5te")
-region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u4bh7"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vr0w3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6tndq")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ngjm")
 }, {
@@ -76,7 +54,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 10.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,16 +68,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s53e4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tpp6e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ocebi")
 }],
 "loop": true,
 "name": &"Run",
-"speed": 15.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdu3u"]
@@ -107,7 +79,7 @@ radius = 8.0
 height = 26.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga5te"]
-radius = 12.0
+radius = 15.0
 height = 36.0
 
 [node name="Monster" type="CharacterBody2D" unique_id=1455547924 groups=["player"]]
@@ -118,10 +90,10 @@ wall_min_slide_angle = 0.0
 script = ExtResource("1_ga5te")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1988715157]
+scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_u4bh7")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.8055474
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1638075204]
 light_mask = 6
