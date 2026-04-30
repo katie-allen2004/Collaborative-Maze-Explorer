@@ -71,16 +71,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 15.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdu3u"]
-radius = 21.0
-height = 46.0
+radius = 8.0
+height = 26.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga5te"]
-radius = 22.0
-height = 50.0
+radius = 15.0
+height = 36.0
 
 [node name="Monster" type="CharacterBody2D" unique_id=1455547924 groups=["player"]]
 z_index = 1
@@ -93,9 +93,8 @@ script = ExtResource("1_ga5te")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1988715157]
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_u4bh7")
-animation = &"Idle"
+animation = &"Run"
 autoplay = "Idle"
-frame_progress = 0.8947125
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1638075204]
 light_mask = 6

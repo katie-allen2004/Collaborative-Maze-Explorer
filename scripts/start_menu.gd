@@ -74,7 +74,11 @@ func _on_how_to_play_pressed() -> void:
 	$click.play()
 	how_to_play_menu.visible = true
 
-
+func _on_secret_pressed() -> void:
+	$click.play()
+	GlobalStats.difficulty = "secret"
+	get_tree().change_scene_to_file("res://WhereLightDies.tscn")
+	
 func _on_easy_pressed() -> void:
 	$click.play()
 	GlobalStats.difficulty = "easy"

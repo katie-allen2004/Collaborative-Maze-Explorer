@@ -266,6 +266,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Secret" type="Button" parent="DifficultyMenu" unique_id=16312670]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 142.0
+offset_right = 797.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.78039217, 0.8627451, 0.8352941, 0.89411765)
+theme_override_colors/font_pressed_color = Color(0.32064736, 0.42509598, 0.39246023, 0.89411765)
+theme_override_colors/font_hover_color = Color(0.9706598, 0.9820772, 0.9781336, 1)
+theme_override_fonts/font = ExtResource("2_vpdu5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ia0g5")
+action_mode = 0
+text = "    "
+flat = true
+
 [node name="DifficultyOptions-VBox" type="VBoxContainer" parent="DifficultyMenu" unique_id=1001526426]
 layout_mode = 1
 anchors_preset = 7
@@ -613,6 +629,7 @@ mouse_filter = 2
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="StartMenu/StartMenuOptions-VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="DifficultyMenu/Secret" to="." method="_on_secret_pressed"]
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="DifficultyMenu/DifficultyOptions-VBox/Hard" to="." method="_on_hard_pressed"]

@@ -18,9 +18,13 @@ func _ready():
 	if GlobalStats.difficulty == "easy":
 		map_choice = ["res://levels/Easy1.tscn", "res://levels/Easy2.tscn","res://levels/Easy3.tscn"]
 	elif GlobalStats.difficulty == "medium":
-		map_choice = ["res://levels/Med1.tscn"]
-	else:
+		map_choice = ["res://levels/Med1.tscn", "res://levels/Med2.tscn"]
+	elif GlobalStats.difficulty == "hard":
 		map_choice = ["res://levels/Hard1.tscn"]
+	elif GlobalStats.difficulty == "secret":
+		map_choice = ["res://levels/Secret1.tscn"]
+	else:
+		map_choice = ["res://levels/Secret1.tscn"]
 	
 	var current_map_choice = map_choice.pick_random()
 	current_map = load(current_map_choice)
@@ -29,8 +33,8 @@ func _ready():
 	map.global_position = pos
 	add_child(map)
 	
-	move_child(brightness_dark_overlay, get_child_count() - 1)
-	move_child(brightness_light_overlay, get_child_count() - 1)
+	#move_child(brightness_dark_overlay, get_child_count() - 1)
+	#move_child(brightness_light_overlay, get_child_count() - 1)
 	
 	apply_settings()
 
