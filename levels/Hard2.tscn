@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://tgll8krcv181" path="res://assets/Dungeon_Tileset.png" id="3_yrs3a"]
 [ext_resource type="Texture2D" uid="uid://bpgfbr2dy8oil" path="res://assets/Maps/Floor.png" id="4_me7m7"]
 [ext_resource type="Texture2D" uid="uid://d2c6m3uwg4an0" path="res://assets/Maps/Walls.png" id="5_4yor1"]
+[ext_resource type="PackedScene" uid="uid://cik6g6sotv02m" path="res://door.tscn" id="6_2erer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4oia"]
 texture = ExtResource("3_yrs3a")
@@ -243,7 +244,21 @@ tile_map_data = PackedByteArray("AADD/+f/AQAAAAAAAADD/+j/AQAAAAAAAADD/+n/AQAAAAA
 tile_set = SubResource("TileSet_jprn6")
 
 [node name="KeySpawnA" type="Marker2D" parent="." unique_id=2134263755]
-position = Vector2(-832, -371)
+position = Vector2(-1632, -1272)
 
 [node name="KeySpawnB" type="Marker2D" parent="." unique_id=1953661399]
-position = Vector2(-225, 282)
+position = Vector2(-1009, 260)
+
+[node name="Key" parent="." unique_id=136783602 instance=ExtResource("2_2erer")]
+position = Vector2(1810, 1423)
+
+[node name="Door2" parent="." unique_id=961116850 instance=ExtResource("6_2erer")]
+z_index = -1
+position = Vector2(-82, -908)
+
+[node name="Door" parent="." unique_id=103452860 instance=ExtResource("6_2erer")]
+z_index = -1
+position = Vector2(1466, -2113)
+
+[node name="MonsterSpawn" type="Marker2D" parent="." unique_id=1755575508]
+position = Vector2(-543, -1491)

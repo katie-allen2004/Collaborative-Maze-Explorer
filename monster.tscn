@@ -75,12 +75,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wdu3u"]
-radius = 21.0
-height = 46.0
+radius = 15.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ga5te"]
-radius = 22.0
-height = 50.0
+radius = 17.0
+height = 36.0
 
 [node name="Monster" type="CharacterBody2D" unique_id=1455547924 groups=["player"]]
 z_index = 1
@@ -121,7 +121,7 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea" unique_id=151670729]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(1, 1)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ga5te")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
